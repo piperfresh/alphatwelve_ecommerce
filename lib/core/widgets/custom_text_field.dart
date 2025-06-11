@@ -7,9 +7,11 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
     this.controller,
+    this.onChanged,
   });
 
   final TextEditingController? controller;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,7 @@ class CustomTextField extends StatelessWidget {
       height: 36.h,
       child: TextField(
         controller: controller,
+        onChanged: onChanged,
         decoration: InputDecoration(
             hintText: 'Search...',
             hintStyle: context.textTheme.displaySmall?.copyWith(

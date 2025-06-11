@@ -17,6 +17,18 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _onSearchChanged() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final products = ref.watch(productNotifierProvider);
@@ -29,7 +41,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: CustomTextField(
-                controller: TextEditingController(),
+                controller: _searchController,
+                onChanged: (p0) {
+                  _onSearchChanged();
+                },
               ),
             ),
             16.sbH,
@@ -51,20 +66,33 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     ),
                   ),
                   LayoutBuilder(builder: (context, constraints) {
-                    return GridView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 4,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
+                    final filterProducts = products
+                        .where((product) => product.title
+                            .toLowerCase()
+                            .contains(_searchController.text.toLowerCase()))
+                        .toList();
+                    return filterProducts.isEmpty
+                        ? SizedBox(
+                            height: MediaQuery.sizeOf(context).height * 0.5,
+                            child: const Center(
+                              child: Text('No products found'),
+                            ),
+                          )
+                        : GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: filterProducts.length,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
                         crossAxisSpacing: 10.w,
                         childAspectRatio: 0.80.h,
                         mainAxisSpacing: 15.0.h,
                       ),
                       itemBuilder: (context, index) {
-                        final product = products[index];
-                        return ProductCard(product: product);
-                      },
+                              final product = filterProducts[index];
+                              return ProductCard(product: product);
+                            },
                     );
                   }),
                 ],

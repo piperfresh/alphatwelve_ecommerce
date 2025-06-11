@@ -1,16 +1,85 @@
-# alphatwelve_ecommerce_assesment
+# alphatwelve_ecommerce
+ecommerce_assessment
 
-A new Flutter project.
+![screen5](https://github.com/user-attachments/assets/2911b2f0-0544-4f6f-919c-cb1ba5af2a32)
+![screen4](https://github.com/user-attachments/assets/a93b7670-954a-4024-ba3d-93d623b7a3d6)
+![screen3](https://github.com/user-attachments/assets/b7483c88-ec4d-47f9-b03f-d5369533d437)
+![screen1](https://github.com/user-attachments/assets/990d10f8-0bf4-4ac7-9f55-5344c9875632)
+![screen2](https://github.com/user-attachments/assets/5786e7dd-8b45-4d35-8f8e-4cda38ef1e90)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+🛠️ Tech Stack
+Framework & Language
 
-A few resources to get you started if this is your first Flutter project:
+Flutter - Google's UI toolkit for building natively compiled applications
+Dart - Programming language optimized for UI development
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+State Management
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Riverpod - A reactive caching and data-binding framework for Flutter/Dart
+
+UI & Styling
+
+Custom Size config - Responsive screen adaptation for different device sizes
+SVG Support - Vector graphics rendering for icons and illustrations
+Custom Fonts - IBM Mono font family , IBM Sans font family and Sf PRo Text font family
+
+Architecture & Patterns
+
+Consumer Pattern - For reactive state management with Riverpod
+Provider Pattern - State management and dependency injection
+Custom Widget Components - Reusable UI components
+
+Key Features
+
+Responsive design that adapts to different screen sizes
+Custom toast notifications with overlay positioning
+Grid-based product display with consistent sizing
+Custom app bar and text field components
+SVG icon support throughout the application
+
+🚀 Getting Started
+Prerequisites
+Before running this application, make sure you have the following installed:
+
+Flutter SDK (>=3.0.0)
+
+Dart SDK (>=3.0.0)
+
+Android Studio / VS Code with Flutter extensions
+
+Android SDK (for Android development)
+
+Xcode (for iOS development - macOS only)
+
+Installation
+Clone the repository
+
+git clone https://github.com/piperfresh/alphatwelve_ecommerce.git
+
+cd alphatwelve_ecommerce
+
+Install dependencies
+
+flutter pub get
+
+
+Running the App
+For Development
+bash# Run on connected device/emulator
+flutter run
+
+#Run in debug mode with hot reload
+flutter run --debug
+
+
+For Production
+
+Build APK for Android
+flutter build apk --release
+
+Build App Bundle for Google Play Store
+flutter build appbundle --release
+
+Build IPA for iOS (macOS only)
+flutter build ios --release
