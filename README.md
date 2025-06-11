@@ -2,12 +2,11 @@
 ecommerce_assessment
 
 
-![screen5.jpeg](..%2F..%2FDownloads%2Fscreen5.jpeg)
-![screen4.jpeg](..%2F..%2FDownloads%2Fscreen4.jpeg)
-![screen3.jpeg](..%2F..%2FDownloads%2Fscreen3.jpeg)
-![screen1.jpeg](..%2F..%2FDownloads%2Fscreen1.jpeg)
-![screen2.jpeg](..%2F..%2FDownloads%2Fscreen2.jpeg)
-
+![screen5](https://github.com/user-attachments/assets/228faa70-42fd-4b5c-8973-3f88768dac6f)
+![screen4](https://github.com/user-attachments/assets/272f59f1-008c-4c65-aa63-9ab99601818a)
+![screen3](https://github.com/user-attachments/assets/b048ce82-2724-4191-93ba-50fb265cb26f)
+![screen1](https://github.com/user-attachments/assets/ff3b46eb-68e0-4dd8-a30e-0fdac478bb82)
+![screen2](https://github.com/user-attachments/assets/240cff45-ffa7-4a88-85d6-23d094e9cf47)
 
 
 🛠️ Tech Stack
