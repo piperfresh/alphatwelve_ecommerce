@@ -1,0 +1,63 @@
+class Product {
+  final String id;
+  final String imgUrl;
+  final String title;
+  final double price;
+  final String description;
+  final bool isFavorite;
+  final int cartQuantity;
+
+  Product({
+    required this.id,
+    required this.imgUrl,
+    required this.title,
+    required this.price,
+    required this.description,
+    this.isFavorite = false,
+    this.cartQuantity = 0,
+  });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'imgUrl': imgUrl,
+      'title': title,
+      'price': price,
+      'description': description,
+      'isFavorite': isFavorite,
+      'cartQuantity': cartQuantity,
+    };
+  }
+
+  factory Product.fromJson(Map<String, dynamic> map) {
+    return Product(
+      id: map['id'] as String,
+      imgUrl: map['imgUrl'] as String,
+      title: map['title'] as String,
+      price: map['price'] as double,
+      description: map['description'] as String,
+      isFavorite: map['isFavorite'] as bool,
+      cartQuantity: map['cartQuantity'] as int,
+    );
+  }
+
+  Product copyWith({
+    String? id,
+    String? imgUrl,
+    String? title,
+    double? price,
+    String? description,
+    bool? isFavorite,
+    int? cartQuantity,
+  }) {
+    return Product(
+      id: id ?? this.id,
+      imgUrl: imgUrl ?? this.imgUrl,
+      title: title ?? this.title,
+      price: price ?? this.price,
+      description: description ?? this.description,
+      isFavorite: isFavorite ?? this.isFavorite,
+      cartQuantity: cartQuantity ?? this.cartQuantity,
+    );
+  }
+}
